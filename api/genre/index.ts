@@ -7,10 +7,10 @@ export default (app: Hono) =>{
     app.post("/", async (c) => {
         try {
             const body = await c.req.json()
-            const type = await prisma.genre.create({
+            const genre = await prisma.genre.create({
                 data: body,
             })
-            return c.json({ success: true, data: type })
+            return c.json({ success: true, data: genre })
         } catch (e: any) {
             return c.json({ success: false, error: e.message }, 400)
         }
@@ -18,21 +18,21 @@ export default (app: Hono) =>{
 
 // 查询所有 Type
     app.get("/", async (c) => {
-        const types = await prisma.genre.findMany({
+        const genre = await prisma.genre.findMany({
             orderBy: { createAt: "desc" },
         })
-        return c.json({ success: true, data: types })
+        return c.json({ success: true, data: genre })
     })
 
 
     app.put("/", async (c) => {
         try {
             const body = await c.req.json<{ id: string; name: string }>()
-            const type = await prisma.genre.update({
+            const genre = await prisma.genre.update({
                 where: { id: body.id },
                 data: { name: body.name },
             })
-            return c.json({ success: true, data: type })
+            return c.json({ success: true, data: genre })
         } catch (e: any) {
             return c.json({ success: false, error: e.message }, 400)
         }
