@@ -7,7 +7,7 @@
     "generate": "bunx prisma generate",
     "studio": "bunx prisma studio",
     "update": "bunx prisma migrate dev",
-    "build": "bunx prisma generate && tsc"
+    "build": "prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^6.16.2",
