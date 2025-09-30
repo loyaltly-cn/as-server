@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "bun run --hot index.ts",
     "push": "bunx prisma db push",
+    "generate": "bunx prisma generate",
     "studio": "bunx prisma studio",
     "update": "bunx prisma migrate dev",
-    "build": "bunx prisma generate"
+    "build": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^6.16.2",
