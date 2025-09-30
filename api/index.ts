@@ -12,7 +12,7 @@ app.use("*", authMiddleware)
 // 自动加载 routes
 loadRoutes(app, path.join(import.meta.dir, "api"))
 
-// Bun server
+// Bun server`
 import { serve } from "bun"
 serve({
     fetch: app.fetch,
