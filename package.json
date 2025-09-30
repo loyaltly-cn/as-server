@@ -7,7 +7,7 @@
     "generate": "bunx prisma generate",
     "studio": "bunx prisma studio",
     "update": "bunx prisma migrate dev",
-    "build": "npx prisma generate"
+    "build": "bunx prisma generate && tsc"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^6.16.2",
@@ -17,7 +17,8 @@
     "axios": "^1.12.2",
     "dotenv": "^17.2.2",
     "hono": "^4.9.8",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@types/bun": "latest",
