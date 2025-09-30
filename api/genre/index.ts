@@ -7,7 +7,7 @@ export default (app: Hono) =>{
     app.post("/", async (c) => {
         try {
             const body = await c.req.json<{ name: string }>()
-            const type = await prisma.type.create({
+            const type = await prisma.genre.create({
                 data: { name: body.name },
             })
             return c.json({ success: true, data: type })
@@ -18,7 +18,7 @@ export default (app: Hono) =>{
 
 // 查询所有 Type
     app.get("/", async (c) => {
-        const types = await prisma.type.findMany({
+        const types = await prisma.genre.findMany({
             orderBy: { createAt: "desc" },
         })
         return c.json({ success: true, data: types })
@@ -28,7 +28,7 @@ export default (app: Hono) =>{
     app.put("/", async (c) => {
         try {
             const body = await c.req.json<{ id: string; name: string }>()
-            const type = await prisma.type.update({
+            const type = await prisma.genre.update({
                 where: { id: body.id },
                 data: { name: body.name },
             })
