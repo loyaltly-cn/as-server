@@ -6,9 +6,9 @@ const prisma = new PrismaClient()
 export default (app: Hono) =>{
     app.post("/", async (c) => {
         try {
-            const body = await c.req.json<{ name: string }>()
+            const body = await c.req.json()
             const type = await prisma.genre.create({
-                data: { name: body.name },
+                data: body,
             })
             return c.json({ success: true, data: type })
         } catch (e: any) {
@@ -42,7 +42,7 @@ export default (app: Hono) =>{
     app.delete("/", async (c) => {
         try {
             const body = await c.req.json<{ id: string }>()
-            await prisma.type.delete({ where: { id: body.id } })
+            await prisma.genre.delete({ where: { id: body.id } })
             return c.json({ success: true, message: "Deleted successfully" })
         } catch (e: any) {
             return c.json({ success: false, error: e.message }, 400)
