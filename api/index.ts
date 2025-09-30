@@ -1,8 +1,8 @@
 import { Hono } from "hono"
 import path from "path"
 import "dotenv/config"
-import { authMiddleware } from "./src/lib/auth"
-import { loadRoutes } from "./src/lib/router"
+import { authMiddleware } from "../lib/auth"
+import { loadRoutes } from "../lib/router"
 
 const app = new Hono()
 
