@@ -10,7 +10,7 @@ const app = new Hono()
 app.use("*", authMiddleware)
 
 // 自动加载 routes
-loadRoutes(app, path.join(import.meta.dir, "api"))
+loadRoutes(app, path.join(import.meta.dir))
 
 // Bun server`
 import { serve } from "bun"
