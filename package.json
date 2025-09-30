@@ -1,7 +1,8 @@
 {
   "name": "hono-server",
+  "type": "module",
   "scripts": {
-    "dev": "bun run --hot api/index.ts",
+    "dev": "bun run --hot index.ts",
     "push": "bunx prisma db push",
     "generate": "bunx prisma generate",
     "studio": "bunx prisma studio",
