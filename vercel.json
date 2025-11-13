@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "prisma generate",
+  "installCommand": "bun install",
+  "framework": null,
+  "functions": {
+    "index.ts": {
+      "runtime": "bun@1.0.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.ts"
+    }
+  ],
+  "ignore": [
+    "api/**/*.js"
+  ]
+}
+

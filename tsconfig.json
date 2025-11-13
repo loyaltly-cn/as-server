@@ -3,10 +3,11 @@
     "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "target": "es2020",        // 或者 esnext
-    "module": "esnext",        // 关键配置
+    "target": "es2020",
+    "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmit": true
   }
 }
