@@ -4,5 +4,8 @@ node_modules/
 /src/generated/prisma
 
 # Compiled JavaScript files (TypeScript project)
+# Ignore .js files in api directory to avoid Vercel deployment conflicts
+api/**/*.js
+lib/**/*.js
 *.js
 !*.config.js
