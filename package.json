@@ -7,7 +7,8 @@
     "generate": "bunx prisma generate",
     "studio": "bunx prisma studio",
     "update": "bunx prisma migrate dev",
-    "build": "prisma generate"
+    "build": "prisma generate",
+    "postbuild": "node scripts/fix-imports-for-vercel.mjs"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^6.16.2",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "^6.16.2"
+    "prisma": "^6.16.2",
+    "tsup": "^8.5.1"
   }
 }
