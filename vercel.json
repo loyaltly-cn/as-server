@@ -1,6 +1,11 @@
 {
   "buildCommand": "npm run build && npm run postbuild",
   "installCommand": "npm install",
-  "framework": null
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index"
+    }
+  ]
 }
 
